@@ -33,7 +33,7 @@ const AccountMenu = props => {
         onClick={toggleMenu}
       />
       <h3 className='panel-title'>Account</h3>
-      <Navbar color='light' light expand='md'>
+      <Navbar expand='md'>
         <Collapse isOpen={isMenuOpen} navbar>
           <ul className='panel-links'>
             {links.map((link, index) => {

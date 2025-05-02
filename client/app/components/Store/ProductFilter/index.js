@@ -11,7 +11,7 @@ import RangeSlider from '../../Common/RangeSlider';
 
 const priceMarks = {
   1: { label: <p className='fw-normal text-black'>Rs. 1</p> },
-  5000: { label: <p className='fw-normal text-black'>Rs. 5000</p> }
+  10000: { label: <p className='fw-normal text-black'>10000</p> }
 };
 
 const rateMarks = {
@@ -92,7 +92,7 @@ const ProductFilter = props => {
             <RangeSlider
               marks={priceMarks}
               defaultValue={[1, 2500]}
-              max={5000}
+              max={10000}
               onChange={v => {
                 filterProducts('price', v);
               }}

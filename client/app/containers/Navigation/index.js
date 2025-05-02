@@ -82,8 +82,8 @@ class Navigation extends React.PureComponent {
           <img
             className='item-image'
             src={`${suggestion.imageUrl
-                ? suggestion.imageUrl
-                : '/images/placeholder-image.png'
+              ? suggestion.imageUrl
+              : '/images/placeholder-image.png'
               }`}
           />
           <div>
@@ -135,8 +135,8 @@ class Navigation extends React.PureComponent {
     };
 
     return (
-      <header className='header fixed-mobile-header'>
-        <div className='header-info'>
+      <header className='header fixed-mobile-header' style={{ background: "black" }}>
+        {/* <div className='header-info'>
           <Container>
             <Row>
               <Col md='4' className='text-center d-none d-md-block'>
@@ -157,7 +157,7 @@ class Navigation extends React.PureComponent {
               </Col>
             </Row>
           </Container>
-        </div>
+        </div> */}
         <Container>
           <Row className='align-items-center top-header'>
             <Col
@@ -179,7 +179,7 @@ class Navigation extends React.PureComponent {
                   />
                 )}
                 <Link to='/'>
-                  <h1 className='logo'>Quick Store</h1>
+                  <h1 className='logo'><img style={{ height: "50px" }} src='\elevateblack.jpg' /></h1>
                 </Link>
               </div>
             </Col>
@@ -209,7 +209,7 @@ class Navigation extends React.PureComponent {
               lg={{ size: 5, order: 3 }}
               className='desktop-hidden'
             >
-              <div className='header-links'>
+              <div className='header-links' >
                 <Button
                   borderless
                   variant='empty'
@@ -225,9 +225,10 @@ class Navigation extends React.PureComponent {
               sm={{ size: 12, order: 2 }}
               md={{ size: 9, order: 1 }}
               lg={{ size: 4, order: 3 }}
-            // className='px-0'
+            // className='px-0' 
+
             >
-              <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
+              <Navbar expand='md' className='mt-1 mt-md-0'>
                 <CartIcon
                   className='d-none d-md-block'
                   cartItems={cartItems}
@@ -242,7 +243,7 @@ class Navigation extends React.PureComponent {
                       isOpen={isBrandOpen}
                     >
                       <DropdownToggle nav>
-                        Brands
+                        <span className='text-light'>Brands</span>
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right className='nav-brand-dropdown'>
@@ -261,13 +262,13 @@ class Navigation extends React.PureComponent {
                       to='/shop'
                       activeClassName='active'
                     >
-                      Shop
+                      <span className='text-light'>Shop</span>
                     </NavLink>
                   </NavItem>
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        {user.firstName ? user.firstName : 'Welcome'}
+                        <span className='text-light'>{user.firstName ? user.firstName : 'Welcome'}</span>
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
