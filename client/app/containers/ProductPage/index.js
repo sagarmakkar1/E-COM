@@ -56,6 +56,7 @@ class ProductPage extends React.PureComponent {
       reviewFormErrors
     } = this.props;
 
+
     return (
       <div className='product-shop'>
         {isLoading ? (
@@ -68,8 +69,8 @@ class ProductPage extends React.PureComponent {
                   <img
                     className='item-image'
                     src={`${product.imageUrl
-                        ? product.imageUrl
-                        : '/images/placeholder-image.png'
+                      ? product.imageUrl
+                      : '/images/placeholder-image.png'
                       }`}
                   />
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
@@ -101,6 +102,16 @@ class ProductPage extends React.PureComponent {
                       )}
                       <p className='item-desc'>{product.description}</p>
                       <p className='price'>Rs. {product.price}</p>
+                      <label htmlFor="size" style={{ padding: "10px" }}>Size</label>
+                      <div className="size-box">
+                        <select name="" id="size" style={styles.select}>
+                          {product.size.map((item, index) => {
+                            return (
+                              <option key={index} value={item}>{item}</option>
+                            )
+                          })}
+                        </select>
+                      </div>
                     </div>
                     <div className='item-customize'>
                       <Input
@@ -190,5 +201,17 @@ const mapStateToProps = state => {
     itemInCart
   };
 };
+
+const styles = {
+  select: {
+    width: "100%",
+    padding: "8px 10px",
+    outline: "none",
+    border: "1px solid #e4e6eb",
+    fontSize: "14px",
+    color: "#323232",
+    transition: "0.3s"
+  }
+}
 
 export default connect(mapStateToProps, actions)(ProductPage);

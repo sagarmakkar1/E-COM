@@ -53,6 +53,10 @@ const ProductSchema = new Schema({
     ref: 'Brand',
     default: null
   },
+  size: {
+    type: [String], // Example: ["S", "M", "L", "XL"]
+    default: ["S", "M", "L", "XL"]
+  },
   updated: Date,
   created: {
     type: Date,

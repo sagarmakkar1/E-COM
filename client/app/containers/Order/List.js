@@ -95,6 +95,7 @@ class List extends React.PureComponent {
             <NotFound message='You have no orders yet.' />
           )}
         </SubPage>
+
       </div>
     );
   }
